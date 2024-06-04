@@ -1,0 +1,11 @@
+.cuerpoproyecto{
+    background:url('../img/Fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+
+}
+
+.calculadora{
+    color: rgb(2, 6, 9);
+}
