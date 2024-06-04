@@ -1,11 +1,87 @@
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background:linear-gradient(to right, rgb(115, 215, 157), rgb(48, 48, 48));
+    
+}
+
+.Calculadora{
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); /*acomodamos cuadros*/
+}
+
+.ac{
+    grid-column: span 2;
+}
+
+.Calculadora > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: beige;
+}
+
+.Calculadora > button:hover,
+.Calculadora > button:focus{
+    background-color: rgb(135, 72, 24);
+
+}
+
+.output{
+    grid-column:  1 / -1;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+
+}
+
+.output .previos{
+    color: aliceblue;
+    font-size:  2.5rem;
+
+}
+
+.output .currento{
+    color: aliceblue;
+    font-size: 2.5rem;
+}
+
+
+
+
+/*
+
+.calculadora{
+    color: antiquewhite;
+}
+
+
+
+/*url('../img/Fondo\ negro.jpg');
+
 .cuerpoproyecto{
-    background:url('../img/Fondo.jpg');
+
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
+    color: aliceblue;
 
 }
 
 .calculadora{
     color: rgb(2, 6, 9);
 }
+*/
