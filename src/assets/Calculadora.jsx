@@ -1,43 +1,57 @@
 import React, { useState } from 'react'
 import style from '../style/style.module.css'
 
+
 export default function Calculadora() {
 
-  const [resultado, setResultado] = useState(0);
+  const [value, setValue] = useState('');
 
-  const sumar = () => {
-    setResultado(resultado + 1);
-  }
+const handle =( e) =>{
+  setValue(value + e.target.innerHTML)
+}
 
+const equal = ()=>{
+  setValue(eval(value));
+
+}
+
+const delet = ()=>{
+  setValue("");
+}
+
+const deletPart = () =>{
+  setValue(value.toString().slice(0,-1))
+}
 
   return (
-    <div></div>
-   /* <div className={style.Calculadora - grid}>
-      <h1 className={style.calculadora}>Resultado</h1>
-      <div className={style.output}>
-        <div className={style.previos - openrand}></div>
-        <div className={style.current - openrand}> </div>
-      </div>
+    <div className={style.Calculadora}>
+    <h1 className={style.titulo}>Resultado</h1>
+    <div className={style.output}>
+      <div className={style.previos}> </div>
+      
+      <div className={style.currento}> {value} </div>
+    </div>
 
-      <input type="text" value={resultado} />
-      <button value="AC">AC</button>
-      <button value="/">/</button>
-      <button onClick={sumar}>1</button>
-      <button value="2" onClick={sumar}>2</button>
-      <button value="3">3</button>
-      <button value="4">4</button>
-      <button value="5">5</button>
-      <button value="6">6</button>
-      <button value="7">7</button>
-      <button value="8">8</button>
-      <button value="9">9</button>
-      <button value="+">+</button>
-      <button value="-">-</button>
-      <button value=".">.</button>
-      <button value="0">0</button>
-      <button value="9">=</button>
+    
+    <button className={style.ac} onClick={delet}>AC</button>
+    <button onClick={deletPart}>DEL</button>
+    <button onClick={handle}>1</button>
+    <button onClick={handle} >2</button>
+    <button onClick={handle}>3</button>
+    <button onClick={handle}>4</button>
+    <button onClick={handle}>5</button>
+    <button onClick={handle}>6</button>
+    <button onClick={handle}>7</button>
+    <button onClick={handle}>8</button>
+    <button onClick={handle}>9</button>
+    <button onClick={handle}>0</button>
+    <button onClick={handle}>+</button>
+    <button onClick={handle}>-</button>
+    <button onClick={handle}>/</button>
+    <button onClick={handle}>.</button>
+    <button onClick={equal}>=</button>
 
-    </div>*/
+  </div>
 
   )
 }
